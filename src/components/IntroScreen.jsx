@@ -77,10 +77,11 @@ export default function IntroScreen({ onSelect, sounds }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black overflow-hidden"
+          className="fixed inset-0 z-[100] bg-black overflow-y-auto w-full"
         >
-          {/* Sfondo animato a tema */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-green-900/30 via-black to-black z-0"></div>
+          <div className="min-h-screen flex flex-col items-center justify-center py-8">
+            {/* Sfondo animato a tema */}
+            <div className="fixed inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-green-900/30 via-black to-black z-0 pointer-events-none"></div>
           
           <motion.div
             animate={{ scale: [1, 1.1, 1], opacity: [0.1, 0.2, 0.1], rotate: [0, 5, 0, -5, 0] }}
@@ -142,6 +143,7 @@ export default function IntroScreen({ onSelect, sounds }) {
                 Attiva l'audio per un'esperienza immersiva
               </p>
             </motion.div>
+          </div>
           </div>
         </motion.div>
       )}
