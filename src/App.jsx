@@ -188,11 +188,10 @@ export default function App() {
       const isDecrim = status === "DECRIMINALIZZATO";
 
       if (isSevere) {
-        deltaParanoia = 50 - paranoia; // Resetta a 50 per evitare il doppio malus (Attacco di panico subito dopo)
+        deltaParanoia = 60; // Alta penalità di paranoia invece di togliere la vita direttamente
         deltaCoins = -200;
         deltaStash = -10;
-        text += " (Fermo di polizia: Hai perso 1 Vita e gran parte del carico. Lo shock azzera la paranoia!)";
-        setLives(prev => prev - 1);
+        text += " (Fermo di polizia: Multa enorme, sequestro e paranoia alle stelle!)";
       } else if (isDecrim) {
         deltaParanoia = 25;
         deltaCoins = -150;
