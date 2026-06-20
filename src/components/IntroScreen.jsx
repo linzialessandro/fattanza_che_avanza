@@ -13,6 +13,9 @@ export default function IntroScreen({ onSelect, sounds }) {
   const [importCode, setImportCode] = useState("");
   const [hasInteracted, setHasInteracted] = useState(false);
 
+  const [exportMessage, setExportMessage] = useState("");
+  const [importMessage, setImportMessage] = useState("");
+
   const handleStartInteraction = () => {
     setHasInteracted(true);
     sounds.playClick();
@@ -39,7 +42,8 @@ export default function IntroScreen({ onSelect, sounds }) {
   const handleExport = () => {
     const code = exportProgress();
     navigator.clipboard.writeText(code);
-    alert("Codice di salvataggio copiato negli appunti!");
+    setExportMessage("Copiato!");
+    setTimeout(() => setExportMessage(""), 3000);
   };
 
   const handleImport = () => {
@@ -48,12 +52,16 @@ export default function IntroScreen({ onSelect, sounds }) {
     if (result.success) {
       sounds.playChime();
       setProgress(result.progress);
-      alert("Salvataggio importato con successo!");
-      setShowSettings(false);
+      setImportMessage("Importato con successo!");
+      setTimeout(() => {
+        setImportMessage("");
+        setShowSettings(false);
+      }, 2000);
       setImportCode("");
     } else {
       sounds.playFail();
-      alert("Codice non valido.");
+      setImportMessage("Codice non valido.");
+      setTimeout(() => setImportMessage(""), 3000);
     }
   };
 
@@ -265,9 +273,11 @@ export default function IntroScreen({ onSelect, sounds }) {
           <h4 className="text-neon-blue font-bold mb-3 flex items-center gap-2"><Download className="w-4 h-4" /> Backup (Mobile Friendly)</h4>
           <p className="text-xs text-gray-400 mb-3 text-left">Esporta un codice testo che puoi copiare o incollare per trasferire i salvataggi.</p>
 
-          <button onClick={handleExport} className="w-full py-2 bg-purple-900/50 hover:bg-purple-800/50 border border-purple-500/50 rounded mb-3 text-sm text-purple-300 font-bold flex items-center justify-center gap-2">
+          <button onClick={handleExport} className="w-full py-2 bg-purple-900/50 hover:bg-purple-800/50 border border-purple-500/50 rounded mb-2 text-sm text-purple-300 font-bold flex items-center justify-center gap-2">
             <Copy className="w-4 h-4" /> Copia codice di Salvataggio
           </button>
+          {exportMessage && <p className="text-xs text-green-400 mb-3 font-bold">{exportMessage}</p>}
+          {!exportMessage && <div className="mb-3"></div>}
 
           <div className="flex gap-2">
             <input
@@ -281,6 +291,7 @@ export default function IntroScreen({ onSelect, sounds }) {
               <Upload className="w-4 h-4" /> Carica
             </button>
           </div>
+          {importMessage && <p className={`text-xs mt-2 font-bold ${importMessage.includes("successo") ? "text-green-400" : "text-red-400"}`}>{importMessage}</p>}
         </motion.div>
       )}
 
