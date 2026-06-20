@@ -12,6 +12,7 @@ import ShopModal from './components/ShopModal';
 import OutcomeModal from './components/OutcomeModal';
 import InfoPanel from './components/InfoPanel';
 import ReflexModal from './components/ReflexModal';
+import EndScreen from './components/EndScreen';
 
 export default function App() {
   const [gameState, setGameState] = useState("INTRO"); // INTRO, PLAYING, LEVEL_SUCCESS, GAMEOVER, VICTORY
@@ -445,62 +446,17 @@ export default function App() {
           </motion.div>
         )}
 
-        {gameState === "GAMEOVER" && (
-          <motion.div 
-            key="gameover"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="flex-1 flex flex-col items-center justify-center p-6 text-center z-10 bg-black/80"
-          >
-            <h2 className="text-5xl font-black text-red-500 text-glow-purple mb-4 uppercase">Busted!</h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-md">{logText}</p>
-            
-            <div className="bg-purple-900/40 border border-purple-500/50 p-4 rounded-xl mb-8 flex items-center justify-center gap-3">
-              <span className="text-3xl">☯</span>
-              <div className="text-left">
-                <p className="text-sm text-purple-300">Karma Ottenuto</p>
-                <p className="text-2xl font-bold text-neon-purple">+{earnedKarma}</p>
-              </div>
-            </div>
-
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => { sounds.playClick(); restartGame(); }}
-              className="bg-red-600 text-white font-bold text-xl py-4 px-10 rounded-full shadow-[0_0_20px_rgba(239,68,68,0.5)]"
-            >
-              Torna alla base
-            </motion.button>
-          </motion.div>
-        )}
-
-        {gameState === "VICTORY" && (
-          <motion.div 
-            key="victory"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="flex-1 flex flex-col items-center justify-center p-6 text-center z-10"
-          >
-            <h2 className="text-5xl font-black text-neon-blue text-glow-blue mb-4 uppercase">EuroTrip Completato!</h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-md">Hai attraversato l'Europa di Schengen sfidando dadi, leggi e paranoie. Sei una leggenda!</p>
-            
-            <div className="bg-purple-900/40 border border-purple-500/50 p-4 rounded-xl mb-8 flex items-center justify-center gap-3">
-              <span className="text-3xl">☯</span>
-              <div className="text-left">
-                <p className="text-sm text-purple-300">Karma Ottenuto (Vittoria!)</p>
-                <p className="text-2xl font-bold text-neon-purple">+{earnedKarma}</p>
-              </div>
-            </div>
-
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => { sounds.playClick(); restartGame(); }}
-              className="bg-neon-blue text-black font-bold text-xl py-4 px-10 rounded-full shadow-[0_0_20px_rgba(0,243,255,0.5)]"
-            >
-              Gioca Ancora
-            </motion.button>
-          </motion.div>
+        {(gameState === "GAMEOVER" || gameState === "VICTORY") && (
+          <EndScreen
+            key="endscreen"
+            isVictory={gameState === "VICTORY"}
+            character={character}
+            stats={{ stash, coins, lives, level }}
+            earnedKarma={earnedKarma}
+            logText={logText}
+            onRestart={restartGame}
+            sounds={sounds}
+          />
         )}
       </AnimatePresence>
 
