@@ -40,6 +40,24 @@ export const COUNTRIES = [
           { label: "Nascondi i semi nelle calze", difficulty: 5, successText: "Le mani in tasca e aria infreddolita. Ti controllano i documenti e ti lasciano andare.", failText: "Notano il tuo nervosismo. Ti smontano le portiere e trovano l'erba ricreativa.", successParanoia: 10, failParanoia: 45, failStash: -3, failCoins: -100 },
           { label: "Bypassa il blocco a fari spenti (Azzardo)", difficulty: 8, successText: "Mossa da film d'azione! Li superi nel buio totale. Guadagni terreno prezioso e trovi una scorciatoia sicura.", failText: "Finisci in un fossato! Arrivano i soccorsi e... i Carabinieri. Peggio di così non si può.", successParanoia: 15, successEnergy: 10, failParanoia: 80, failStash: -5, failCoins: -150 }
         ]
+      },
+      {
+        title: "Il Traghetto per le Isole",
+        text: "Caldo asfissiante in fila per l'imbarco. Cani antidroga della Finanza ispezionano le auto una ad una.",
+        options: [
+          { label: "Usa 'Scammuffo'", power: "scammuffo", result: "success", text: "Neutralizzi l'odore mentre il cane ti passa affianco. Il finanziere non si accorge di nulla.", successParanoia: 0 },
+          { label: "Offri dell'acqua fresca all'agente", difficulty: 4, successText: "L'agente, sudato, ringrazia e ti fa cenno di passare senza controllare.", failText: "L'agente rifiuta freddamente e decide di controllare l'abitacolo. Multa e ritardo.", successParanoia: 10, failParanoia: 30, failStash: -2, failCoins: -100 },
+          { label: "Provoca un finto guasto al motore (Azzardo)", difficulty: 7, successText: "Il fumo dal cofano distrae tutti. Ti fanno imbarcare subito per non bloccare la fila!", failText: "Il fumo insospettisce i cani. Ti smontano l'auto pezzo per pezzo.", successParanoia: 15, successEnergy: 10, failParanoia: 60, failStash: -6, failCoins: -200 }
+        ]
+      },
+      {
+        title: "Autogrill Sospetto",
+        text: "Ti sei fermato per un Camogli, ma noti due agenti in borghese che fissano il tuo zaino vicino alla cassa.",
+        options: [
+          { label: "Usa 'Collirio'", power: "collirio", result: "success", text: "Ritiri lo scontrino con gli occhi limpidissimi e un sorriso fiducioso. Ti ignorano.", successParanoia: 0 },
+          { label: "Fingi di aver perso il portafogli", difficulty: 5, successText: "Fai una scena pietosa. Gli agenti si impietosiscono e si voltano dall'altra parte.", failText: "Si offrono di aiutarti chiedendo i documenti. L'ansia ti tradisce e controllano lo zaino.", successParanoia: 10, failParanoia: 40, failStash: -3, failCoins: -80 },
+          { label: "Infila lo stash nel panino di uno sconosciuto (Azzardo)", difficulty: 8, successText: "Mossa da maestro! Lo sconosciuto viene fermato e tu recuperi il malloppo dal suo vassoio poco dopo.", failText: "Lo sconosciuto se ne accorge e urla. Gli agenti intervengono immediatamente.", successParanoia: 15, successStash: 5, failParanoia: 70, failStash: -5, failCoins: -150 }
+        ]
       }
     ]
   },
@@ -73,6 +91,24 @@ export const COUNTRIES = [
           { label: "Usa 'Collirio'", power: "collirio", result: "success", text: "Occhi di ghiaccio. Trasudi innocenza. I gendarmi guardano superficialmente e ti fanno andare.", successParanoia: 0 },
           { label: "Protesta invocando i diritti civili", difficulty: 4, successText: "Inizi a citare leggi inventate, creando una fila di clacson. I poliziotti, esasperati, ti mandano via.", failText: "Si arrabbiano e chiamano un superiore. Smontano l'auto e trovano lo stash ricreativo.", successParanoia: 10, failParanoia: 50, failStash: -5, failCoins: -150 },
           { label: "Nascondi i semi nello scarico (Azzardo)", difficulty: 7, successText: "Fissato col nastro termico. Geniale! Passi indenne l'ispezione approfondita e trovi vecchi contanti nel cruscotto.", failText: "Lo scarico brucia la bustina del tuo stash ricreativo. L'odore affumicato fa scattare l'arresto.", successParanoia: 15, successCoins: 100, failParanoia: 65, failStash: -10, failCoins: -200 }
+        ]
+      },
+      {
+        title: "I Controlli al Casello",
+        text: "Péage intasato. La Gendarmerie sta facendo controlli a tappeto passando tra i veicoli fermi in coda.",
+        options: [
+          { label: "Usa 'Canna di Pace'", power: "canna_pace", result: "success", text: "Regali un po' d'erba al guidatore nervoso accanto a te. La polizia lo ferma, tu passi il casello.", successParanoia: 0 },
+          { label: "Fingi un colpo di sonno", difficulty: 4, successText: "Sembra che tu abbia solo bisogno di un caffè. L'agente ti dice di guidare con prudenza e passa oltre.", failText: "Ti chiedono di accostare per un test antidroga. Il controllo rivela il carico.", successParanoia: 10, failParanoia: 50, failStash: -4, failCoins: -200 },
+          { label: "Corrompi l'operatore del casello (Azzardo)", difficulty: 7, successText: "Gli allunghi 50 euro, lui apre la sbarra d'emergenza e ti lancia pure una mappa senza pedaggi!", failText: "L'operatore chiama la Gendarmerie. Tentata corruzione e sequestro.", successParanoia: 15, successCoins: 100, failParanoia: 80, failStash: -8, failCoins: -300 }
+        ]
+      },
+      {
+        title: "Costa Azzurra",
+        text: "Sei parcheggiato a guardare il mare. Una volante della polizia si affianca silenziosamente.",
+        options: [
+          { label: "Usa 'Via di Fuga'", power: "via_fuga", result: "success", text: "Metti in moto e sparisci nelle stradine a picco sul mare in una scena degna di James Bond.", successParanoia: 0 },
+          { label: "Fai il turista smarrito in costume", difficulty: 6, successText: "Usi il tuo pessimo accento francese per chiedere dov'è la spiaggia. Ridono e ti ignorano.", failText: "Non credono alla storia. Notano lo scomparto segreto e sequestrano parte della merce.", successParanoia: 10, failParanoia: 40, failStash: -5, failCoins: -150 },
+          { label: "Sali sullo yacht di un ricco sconosciuto (Azzardo)", difficulty: 8, successText: "Il magnate ti scambia per un ospite, la polizia non osa disturbare. Ti offrono caviale ed erba eccellente.", failText: "La security dello yacht ti butta in acqua dritto tra le braccia della polizia.", successParanoia: 15, successStash: 8, successEnergy: 20, failParanoia: 80, failStash: -10, failCoins: -200 }
         ]
       }
     ]
@@ -108,6 +144,24 @@ export const COUNTRIES = [
           { label: "Accellera a 240 km/h", difficulty: 6, successText: "Il motore urla, semini l'inseguitore in stile Autobahn senza limiti!", failText: "Motore in surriscaldamento. Devi fermarti in corsia d'emergenza. L'auto nera ti affianca e requisisce il carico.", successParanoia: 10, failParanoia: 50, failStash: -5, failCoins: -100 },
           { label: "Frenata improvvisa e deviazione (Azzardo)", difficulty: 8, successText: "Li prendi di sorpresa e li fai sbandare! Trovi uno zainetto con erba e soldi abbandonato al lato.", failText: "Perdi il controllo e strisci il guardrail. Danni all'auto e ti beccano in pieno.", successParanoia: 15, successStash: 5, successCoins: 100, failParanoia: 70, failStash: -4, failCoins: -200 }
         ]
+      },
+      {
+        title: "La Fila al Berghain",
+        text: "Cerchi rifugio nel leggendario techno club di Berlino. Sven, il famoso buttafuori, ispeziona chiunque.",
+        options: [
+          { label: "Usa 'Collirio'", power: "collirio", result: "success", text: "Sguardo impenetrabile, vestiti neri. Sven annuisce e ti fa passare senza perquisirti.", successParanoia: 0 },
+          { label: "Dichiara 24 grammi", difficulty: 5, successText: "La legge lo permette. Sven apprezza l'onestà tedesca e ti fa entrare senza batter ciglio.", failText: "Avevi 26 grammi! Le regole sono inflessibili. Sven ti caccia e segnala la cosa a una pattuglia.", successParanoia: 10, failParanoia: 35, failStash: -5, failCoins: -100 },
+          { label: "Corrompi chi è in coda per farti coprire (Azzardo)", difficulty: 8, successText: "I ragazzi distraggono i buttafuori. Entri scavalcando e trovi delle monete cadute a terra nel locale.", failText: "Ti scoprono subito. Vieni bandito a vita dal locale e la polizia ti multa.", successParanoia: 15, successCoins: 150, failParanoia: 60, failStash: -3, failCoins: -150 }
+        ]
+      },
+      {
+        title: "Oktoberfest Fuori Stagione",
+        text: "Finisci in una festa della birra bavarese immensa. Polizia ovunque, ma la folla ubriaca è un ottimo nascondiglio.",
+        options: [
+          { label: "Usa 'Scammuffo'", power: "scammuffo", result: "success", text: "Puzzi di birra e salsicce come tutti gli altri. Passi inosservato tra le volanti.", successParanoia: 0 },
+          { label: "Mettiti a ballare sui tavoli", difficulty: 4, successText: "Sei l'anima della festa. Nessun poliziotto sospetterebbe mai di te.", failText: "Cadi dal tavolo e fai cadere un cameriere su un poliziotto. Ti perquisiscono per vendetta.", successParanoia: 10, failParanoia: 45, failStash: -4, failCoins: -80 },
+          { label: "Ruba un boccale gigantesco come scudo (Azzardo)", difficulty: 7, successText: "Nascondi lo stash nel doppio fondo di un boccale souvenir. Un gruppo di turisti ti offre pure da bere!", failText: "Ti arrestano per furto del boccale. La situazione degenera in fretta.", successParanoia: 15, successEnergy: 20, failParanoia: 70, failStash: -6, failCoins: -120 }
+        ]
       }
     ]
   },
@@ -141,6 +195,24 @@ export const COUNTRIES = [
           { label: "Usa 'Canna di Pace'", power: "canna_pace", result: "success", text: "Offri da fumare al gruppo. Lo sciatore declina, ma l'atmosfera si rilassa e capisci che è innocuo.", successParanoia: 0 },
           { label: "Dormi con lo zaino abbracciato", difficulty: 4, successText: "Passi una notte insonne ma al sicuro. Nessuno tocca la tua roba.", failText: "Ti addormenti profondamente e qualcuno ti fruga nello zaino, rubando metà dello stash.", successParanoia: 10, failParanoia: 50, failStash: -5 },
           { label: "Esci nella bufera notturna (Azzardo)", difficulty: 8, successText: "Sopravvivi al freddo glaciale. Tutta quell'aria gelida ti rende lucidissimo e inarrestabile.", failText: "Principio di assideramento. Devi chiedere aiuto ai soccorsi, esponendo tutto il carico.", successParanoia: 15, successEnergy: 20, failParanoia: 90, failStash: -8, failCoins: -150 }
+        ]
+      },
+      {
+        title: "Treno Panoramico del Bernina",
+        text: "Mentre ammiri i ghiacciai, un controllore eccessivamente zelante nota il tuo zaino sospetto.",
+        options: [
+          { label: "Usa 'Canna di Pace'", power: "canna_pace", result: "success", text: "Lo convinci ad annusare un po' di pura genetica svizzera. Chiude un occhio e si gode il panorama.", successParanoia: 0 },
+          { label: "Nasconditi nel bagno del treno", difficulty: 6, successText: "Chiudi a chiave finché non arrivate a Sankt Moritz. Te la cavi per un pelo.", failText: "Il controllore ha la chiave universale. Ti becca nel bagno con lo stash in mano.", successParanoia: 10, failParanoia: 50, failStash: -3, failCoins: -150 },
+          { label: "Salta sul tetto del treno (Azzardo)", difficulty: 9, successText: "Azione estrema! Percorri due vagoni e rientri indisturbato. L'adrenalina ti rigenera.", failText: "Una galleria! Ti abbassi all'ultimo, ma perdi lo zaino nel vento gelato.", successParanoia: 15, successEnergy: 30, failParanoia: 90, failStash: -10, failCoins: 0 }
+        ]
+      },
+      {
+        title: "Cassetta di Sicurezza a Ginevra",
+        text: "Entri in una banca svizzera per depositare parte del carico temporaneamente, ma ci sono controlli anti-riciclaggio.",
+        options: [
+          { label: "Usa 'Collirio'", power: "collirio", result: "success", text: "Fai la faccia da banchiere d'affari e presenti documenti fasulli. Ti aprono la cassetta senza problemi.", successParanoia: 0 },
+          { label: "Dichiara che sono solo campioni botanici", difficulty: 5, successText: "Il direttore della banca crede alla tua copertura da agronomo e ti fa passare.", failText: "Chiedono i certificati d'origine. Sequestrano i campioni e ti fanno una multa amministrativa.", successParanoia: 10, failParanoia: 40, failStash: -4, failCoins: -200 },
+          { label: "Infiltrati nel caveau di notte (Azzardo)", difficulty: 8, successText: "Aggiri i laser! Non solo nascondi lo stash, ma trovi pure un po' di contanti non tracciabili.", failText: "Scatta l'allarme silenzioso. Polizia privata in azione. Pestaggio e sequestro.", successParanoia: 15, successCoins: 400, failParanoia: 80, failStash: -10, failCoins: -100 }
         ]
       }
     ]
@@ -176,6 +248,24 @@ export const COUNTRIES = [
           { label: "Metti lo zaino in fondo a un carrello bagagli enorme", difficulty: 5, successText: "Lupo, sfinito, guarda solo le valigie in cima. Passi miracolosamente.", failText: "Lupo fa svuotare tutto il carrello. Trovano lo zaino. Multa e confisca.", successParanoia: 10, failParanoia: 70, failStash: -8, failCoins: -200 },
           { label: "Infiltrati nella stiva VIP (Azzardo)", difficulty: 8, successText: "Zero controlli! Trovi una festa privata e i marinai ti regalano erba spagnola clamorosa.", failText: "Un marinaio ti becca e ti denuncia a Lupo. Il viaggio è un inferno.", successParanoia: 15, successStash: 8, failParanoia: 90, failStash: -10, failCoins: -150 }
         ]
+      },
+      {
+        title: "Ramblas Affollate",
+        text: "Una fiumana di turisti, artisti di strada, borseggiatori e poliziotti. Qualcuno prova a sfilarti lo zaino.",
+        options: [
+          { label: "Usa 'Via di Fuga'", power: "via_fuga", result: "success", text: "Schivi il borseggiatore e ti infili in un vicolo buio del Barrio Gotico prima che arrivi la polizia.", successParanoia: 0 },
+          { label: "Urla al ladro", difficulty: 5, successText: "La folla si gira, il borseggiatore scappa a mani vuote. La polizia non fa domande.", failText: "La polizia arriva, ferma te e il ladro. Ti controllano i documenti e ti multano per possesso sulla strada.", successParanoia: 10, failParanoia: 40, failStash: -4, failCoins: -100 },
+          { label: "Borseggia il borseggiatore (Azzardo)", difficulty: 7, successText: "Giochi d'anticipo! Gli sfili il portafogli prima che lui ti rubi lo zaino. Soldi facili!", failText: "Sbagli il tempismo, vi mettete a litigare e la Guardia Civil arresta entrambi.", successParanoia: 15, successCoins: 150, failParanoia: 60, failStash: -6, failCoins: -100 }
+        ]
+      },
+      {
+        title: "Fuga nella Siesta",
+        text: "Pomeriggio torrido in Andalusia. Una pattuglia ti insegue lentamente, vinta dal caldo implacabile.",
+        options: [
+          { label: "Usa 'Scammuffo'", power: "scammuffo", result: "success", text: "Ti accasci sotto l'ombra di un ulivo in perfetto stile siesta. I poliziotti passano oltre.", successParanoia: 0 },
+          { label: "Nasconditi in un cortile privato", difficulty: 4, successText: "Una signora anziana ti sorride e ti offre dell'acqua fresca mentre la polizia passa.", failText: "Un cane da guardia inizia ad abbaiare furiosamente. La pattuglia ti becca in flagrante.", successParanoia: 10, successEnergy: 10, failParanoia: 35, failStash: -3, failCoins: -80 },
+          { label: "Sfida il calore estremo correndo (Azzardo)", difficulty: 8, successText: "I poliziotti svengono per il caldo. Tu sopravvivi, trovando riparo in un chiringuito vuoto con cassa aperta.", failText: "Crollo termico. Finisci in ospedale e la polizia ti denuncia mentre sei attaccato alla flebo.", successParanoia: 15, successCoins: 100, failParanoia: 85, failStash: -8, failCoins: -200 }
+        ]
       }
     ]
   },
@@ -209,6 +299,24 @@ export const COUNTRIES = [
           { label: "Usa 'Collirio'", power: "collirio", result: "success", text: "Rimani glaciale. All'apertura delle porte cammini fiero tra gli agenti e passi inosservato.", successParanoia: 0 },
           { label: "Forza le porte d'emergenza", difficulty: 6, successText: "Riesci a scappare nel tunnel oscuro sfidando la sorte e trovi un borsone abbandonato.", failText: "Le porte non cedono. All'arrivo in stazione sei in manette.", successParanoia: 10, successStash: 5, successCoins: 50, failParanoia: 80, failStash: -8, failCoins: -250 },
           { label: "Tira il freno d'emergenza e scappa (Azzardo)", difficulty: 8, successText: "Frenata violenta! Nel panico sfuggi nella notte trovando uno zaino abbandonato pieno di energy drink.", failText: "Il treno si blocca, ma la polizia arriva dal tunnel. Nessuna via d'uscita.", successParanoia: 15, successEnergy: 20, failParanoia: 100, failStash: -12, failCoins: -400 }
+        ]
+      },
+      {
+        title: "Pub di Periferia",
+        text: "Ti sei rifugiato in un pub per la pioggia. Scoppia una rissa tra tifosi di calcio. I Bobby (poliziotti) entrano in forze.",
+        options: [
+          { label: "Usa 'Collirio'", power: "collirio", result: "success", text: "Siedi calmo sorseggiando una birra chiara. La polizia ignora chiunque non stia lanciando sedie.", successParanoia: 0 },
+          { label: "Spacciati per il barista", difficulty: 6, successText: "Ti metti dietro al bancone e asciughi un bicchiere. Nessuno dubita di te.", failText: "Il vero barista ti denuncia per intrusione. Ti perquisiscono e trovano lo stash.", successParanoia: 10, failParanoia: 50, failStash: -5, failCoins: -150 },
+          { label: "Approfitta della rissa per scappare col registratore di cassa (Azzardo)", difficulty: 9, successText: "Follia pura! Ti prendi la cassa del pub nel caos e corri nella pioggia inglese. Un bottino colossale.", failText: "Un tifoso gigantesco ti blocca la strada. Ti riempiono di botte e vieni arrestato.", successParanoia: 15, successCoins: 500, failParanoia: 100, failStash: -10, failCoins: -200 }
+        ]
+      },
+      {
+        title: "Il Black Cab",
+        text: "Prendi un taxi tipico londinese. Guardi lo specchietto e l'autista sta comunicando la tua posizione via radio.",
+        options: [
+          { label: "Usa 'Via di Fuga'", power: "via_fuga", result: "success", text: "Apri la portiera mentre il taxi rallenta al semaforo e scompari in un vicolo pieno di nebbia.", successParanoia: 0 },
+          { label: "Convinci l'autista che si sbaglia", difficulty: 5, successText: "Inizi a parlare di cricket in modo fluente. Si convince che tu non sia il criminale cercato.", failText: "L'accento fa pena. Accosta direttamente davanti alla stazione di polizia di Scotland Yard.", successParanoia: 10, failParanoia: 60, failStash: -6, failCoins: -250 },
+          { label: "Offri il doppio della ricompensa (Azzardo)", difficulty: 7, successText: "Il tassista spegne la radio, accetta i soldi e ti scarica in una safe-house segreta piena di roba utile.", failText: "Il tassista è integerrimo. Chiude le portiere e ti porta dritto al comando.", successParanoia: 15, successStash: 10, failParanoia: 80, failStash: -5, failCoins: -400 }
         ]
       }
     ]
@@ -244,6 +352,24 @@ export const COUNTRIES = [
           { label: "Fingi di essere una coppia in vena romantica", difficulty: 3, successText: "Abbracci il primo sconosciuto sulla barca. La polizia ride e vi lascia in pace.", failText: "L'ufficiale riconosce la tua faccia dai file di Lupo. Controllo immediato e sequestro.", successParanoia: 10, failParanoia: 50, failStash: -6, failCoins: -120 },
           { label: "Tuffati nel canale gelato (Azzardo)", difficulty: 8, successText: "Nuoti fino alla riva opposta sfidando la morte. Nel fondale trovi un portafogli smarrito!", failText: "L'acqua è letale. La polizia ti 'salva' e ti arresta per direttissima.", successParanoia: 15, successCoins: 200, failParanoia: 80, failStash: -10, failCoins: -150 }
         ]
+      },
+      {
+        title: "Red Light District",
+        text: "Nel quartiere a luci rosse, poliziotti a cavallo sgombrano la strada. Un truffatore cerca di venderti 'erba spaziale' falsa attirando l'attenzione.",
+        options: [
+          { label: "Usa 'Canna di Pace'", power: "canna_pace", result: "success", text: "Accendi una genetica pregiata. Il truffatore capisce che sei un esperto e se ne va in silenzio.", successParanoia: 0 },
+          { label: "Spingi il truffatore verso i cavalli", difficulty: 5, successText: "Lui cade e la polizia si accanisce su di lui. Tu ti allontani tranquillo.", failText: "Cadi anche tu nel caos. La polizia vi perquisisce entrambi e becca il tuo carico.", successParanoia: 10, failParanoia: 45, failStash: -4, failCoins: -100 },
+          { label: "Infilati in un bordello per nasconderti (Azzardo)", difficulty: 8, successText: "Paghi l'ingresso e la ragazza ti nasconde dietro le tende rosse. Eviti tutto e recuperi energia.", failText: "Il buttafuori del bordello ti caccia a calci dritto sui poliziotti a cavallo.", successParanoia: 15, successEnergy: 30, failParanoia: 70, failStash: -5, failCoins: -150 }
+        ]
+      },
+      {
+        title: "Museo di Van Gogh",
+        text: "I cani antidroga sono impazziti nella sala principale. Le guardie stanno bloccando le uscite.",
+        options: [
+          { label: "Usa 'Scammuffo'", power: "scammuffo", result: "success", text: "Vaporizzi lo spray sui semi e sullo stash. Esci mischiato a una scolaresca in gita.", successParanoia: 0 },
+          { label: "Nascondi lo stash nei Girasoli", difficulty: 6, successText: "Appoggi abilmente la busta dietro la cornice e la recuperi appena i cani si allontanano.", failText: "Scatta l'allarme del dipinto. Le guardie d'assalto ti buttano a terra in tre secondi.", successParanoia: 10, failParanoia: 60, failStash: -8, failCoins: -200 },
+          { label: "Travestiti da curatore del museo (Azzardo)", difficulty: 8, successText: "Prendi un pass e dirigi tu stesso le guardie fuori strada. Ricevi perfino una mancia dai turisti!", failText: "Il vero curatore ti becca. Ti accusano di tentato furto d'arte.", successParanoia: 15, successCoins: 150, failParanoia: 90, failStash: -10, failCoins: -300 }
+        ]
       }
     ]
   },
@@ -277,6 +403,24 @@ export const COUNTRIES = [
           { label: "Usa 'Canna di Pace'", power: "canna_pace", result: "success", text: "Offri a Lupo l'ultima canna. Lui, stremato, accetta. Fumate assieme ammirando Praga. Hai vinto.", successParanoia: 0 },
           { label: "Discorso Epico sulle Libertà", difficulty: 7, successText: "Le tue parole commuovono Lupo, che non solo si ritira, ma ti dona la taglia che aveva su di te per la tua missione!", failText: "Lupo è cinico. Ti arresta a un passo dal traguardo. Ma il seme ormai è nella terra.", successParanoia: 15, successCoins: 500, failParanoia: 100, failStash: -20, failCoins: -500 },
           { label: "Scompare in una nuvola fumogena (Azzardo)", difficulty: 9, successText: "Ninja style! Scompari rubando la sacca delle prove a Lupo. La leggenda è nata.", failText: "Il fumogeno fa cilecca. Lupo ti ammanetta scuotendo la testa.", successParanoia: 15, successStash: 20, successCoins: 1000, failParanoia: 100, failStash: -20, failCoins: 0 }
+        ]
+      },
+      {
+        title: "Il Mercato Nero di Praga",
+        text: "Per preparare il terreno, ti serve un fertilizzante speciale. I venditori sotterranei sono sospettosi e minacciosi.",
+        options: [
+          { label: "Usa 'Collirio'", power: "collirio", result: "success", text: "Fissi negli occhi il capobanda senza battere ciglio. Rispetta la tua tempra e ti dà la merce senza problemi.", successParanoia: 0 },
+          { label: "Usa il gergo giusto", difficulty: 5, successText: "Riconosci le password segrete dell'underground di Praga. Ti offrono il prodotto scontato.", failText: "Dici una cavolata. Capiscono che sei un novellino, ti derubano e ti cacciano via.", successParanoia: 10, successCoins: 50, failParanoia: 40, failStash: -2, failCoins: -150 },
+          { label: "Ruba il fertilizzante (Azzardo)", difficulty: 8, successText: "Fuggi con due sacchi da 20kg. Sei un treno in corsa e nessuno riesce a fermarti!", failText: "Ti prendono. Ti fanno bere un litro di assenzio finto e ti risvegli in un vicolo, derubato.", successParanoia: 15, successEnergy: -20, failParanoia: 80, failStash: -10, failCoins: -250 }
+        ]
+      },
+      {
+        title: "Inseguimento in Tram",
+        text: "Lupo ti ha trovato. Salti al volo sul celebre tram rosso numero 22, ma lui è dietro di te.",
+        options: [
+          { label: "Usa 'Via di Fuga'", power: "via_fuga", result: "success", text: "Il tram frena improvvisamente, tu salti fuori, lasciando Lupo bloccato tra i passeggeri indignati.", successParanoia: 0 },
+          { label: "Blocca le porte dall'interno", difficulty: 6, successText: "Le porte si chiudono a un millimetro dal naso di Lupo. Ciao ciao, ispettore!", failText: "Le porte si riaprono per il sistema di sicurezza. Lupo entra e ti multa pesantemente, sequestrando la merce.", successParanoia: 10, failParanoia: 60, failStash: -5, failCoins: -200 },
+          { label: "Prendi il controllo del tram (Azzardo)", difficulty: 9, successText: "Tiri via il guidatore e metti il turbo! Deragli ma semini chiunque, diventando una leggenda locale.", failText: "Ti schianti subito. Danni immensi, arresto e multa stratosferica.", successParanoia: 15, successCoins: 200, failParanoia: 100, failStash: -15, failCoins: -400 }
         ]
       }
     ]
