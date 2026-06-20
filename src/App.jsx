@@ -263,13 +263,12 @@ export default function App() {
       return;
     }
 
-    // Controlliamo i malus di stato critico (Panic Attack o Svenimento)
+    // Controlliamo i malus di stato critical (Panic Attack o Svenimento)
     if (par >= 100) {
       currentLives -= 1;
       setLives(currentLives);
       setParanoia(50); // Reset parziale dopo l'attacco di panico
-      setStash(prev => Math.max(0, prev - 5)); // Perde molta roba fuggendo
-      setLogText("Hai avuto un attacco di panico enorme! Hai buttato via un bel po' di roba e sei fuggito al prossimo step. (Hai perso 1 Vita).");
+      setLogText("Hai avuto un attacco di panico enorme a causa dello stress accumulato. La mente ha ceduto per un attimo, ma riesci a rimetterti in sesto. (Hai perso 1 Vita).");
       setOutcomeType("fail");
       setTimeout(() => setShowOutcomeModal(true), 100);
       return; // Rimane nel modal e aspetta il prossimo next
