@@ -88,27 +88,36 @@ export default function ReflexModal({ isOpen, target, paranoia, munchies, sounds
         className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md"
       >
         <motion.div 
-          className="w-full max-w-sm flex flex-col items-center p-8 rounded-3xl glass-panel border border-neon-blue/50"
+          className="w-full max-w-md flex flex-col items-center p-8 rounded-3xl glass-panel border border-neon-blue/30 shadow-[0_0_40px_rgba(0,243,255,0.15)] relative overflow-hidden"
           initial={{ scale: 0.8, y: 50 }}
           animate={{ scale: 1, y: 0 }}
         >
-          <h2 className="text-2xl font-bold text-neon-blue mb-4">Mettiti alla prova!</h2>
-          <p className="text-gray-300 mb-6 text-center text-sm">
-            Fermati nell'area verde. La paranoia aumenta la velocità!
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-neon-blue/10 to-transparent pointer-events-none"></div>
+
+          <h2 className="text-3xl font-black font-display text-neon-blue mb-2 text-glow-blue tracking-wide">Test di Riflessi</h2>
+          <p className="text-gray-300 mb-8 text-center text-sm font-sans px-4">
+            Fermati nell'area verde. Attenzione: la <strong className="text-red-400">paranoia</strong> aumenta la velocità!
           </p>
 
-          <div className="w-full h-12 bg-gray-900 rounded-full border-2 border-gray-700 relative overflow-hidden mb-8 shadow-[0_0_15px_rgba(0,0,0,0.8)_inset]">
+          <div className="w-full h-14 bg-black/80 rounded-full border border-white/10 relative overflow-hidden mb-10 shadow-inner">
+            {/* Background grid pattern for a techy look */}
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_24%,rgba(255,255,255,0.05)_25%,transparent_26%,transparent_74%,rgba(255,255,255,0.05)_75%,transparent_76%)] bg-[length:20px_20px]"></div>
+
             {/* Green Zone */}
             <div 
-              className="absolute top-0 bottom-0 bg-emerald-500/80 shadow-[0_0_10px_rgba(16,185,129,0.8)]"
+              className="absolute top-0 bottom-0 bg-gradient-to-b from-emerald-400 to-emerald-600 shadow-[0_0_15px_rgba(16,185,129,0.8)] opacity-90"
               style={{ left: `${greenStart}%`, width: `${greenWidth}%` }}
-            ></div>
+            >
+              <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.2)_25%,rgba(255,255,255,0.2)_50%,transparent_50%,transparent_75%,rgba(255,255,255,0.2)_75%,rgba(255,255,255,0.2)_100%)] bg-[length:10px_10px]"></div>
+            </div>
             
             {/* Cursor */}
             <div 
-              className="absolute top-0 bottom-0 w-2 bg-white drop-shadow-[0_0_8px_rgba(255,255,255,1)]"
-              style={{ left: `calc(${cursorPos}% - 4px)` }}
-            ></div>
+              className="absolute top-0 bottom-0 w-1.5 bg-white drop-shadow-[0_0_8px_rgba(255,255,255,1)]"
+              style={{ left: `calc(${cursorPos}% - 3px)` }}
+            >
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-8 border-2 border-white rounded-sm"></div>
+            </div>
           </div>
 
           {step === 'waiting' && (
@@ -116,9 +125,9 @@ export default function ReflexModal({ isOpen, target, paranoia, munchies, sounds
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleStart}
-              className="px-8 py-4 rounded-full bg-neon-blue text-black font-bold text-xl shadow-[0_0_15px_rgba(0,243,255,0.5)] flex items-center gap-2"
+              className="w-full py-4 rounded-xl font-display tracking-widest uppercase bg-neon-blue/20 text-neon-blue border border-neon-blue font-bold text-xl shadow-[0_0_15px_rgba(0,243,255,0.3)] hover:bg-neon-blue hover:text-black hover:shadow-[0_0_25px_rgba(0,243,255,0.6)] flex items-center justify-center gap-3 transition-colors"
             >
-              <Target className="w-6 h-6" /> Inizia
+              <Target className="w-6 h-6" /> Inizia Test
             </motion.button>
           )}
 
@@ -127,17 +136,17 @@ export default function ReflexModal({ isOpen, target, paranoia, munchies, sounds
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleStop}
-              className="px-8 py-4 rounded-full bg-neon-purple text-white font-bold text-xl shadow-[0_0_20px_rgba(188,19,254,0.8)] flex items-center gap-2 animate-pulse"
+              className="w-full py-4 rounded-xl font-display tracking-widest uppercase bg-neon-purple text-white font-bold text-xl shadow-[0_0_20px_rgba(188,19,254,0.6)] flex items-center justify-center gap-3 animate-pulse border border-neon-purple"
             >
-              <StopCircle className="w-6 h-6" /> STOP!
+              <StopCircle className="w-6 h-6" /> FERMA ORA!
             </motion.button>
           )}
 
           {step === 'result' && result !== null && (
             <motion.div 
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className={`text-3xl font-black uppercase ${isSuccess ? 'text-emerald-400 drop-shadow-[0_0_10px_rgba(16,185,129,0.8)]' : 'text-red-500 drop-shadow-[0_0_10px_rgba(239,68,68,0.8)]'}`}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className={`w-full py-4 text-center text-3xl font-black font-display uppercase tracking-widest rounded-xl border ${isSuccess ? 'text-emerald-400 bg-emerald-950/40 border-emerald-500/50 text-glow-green' : 'text-red-500 bg-red-950/40 border-red-500/50 drop-shadow-[0_0_10px_rgba(239,68,68,0.8)]'}`}
             >
               {isSuccess ? 'SUCCESSO!' : 'FALLIMENTO!'}
             </motion.div>
